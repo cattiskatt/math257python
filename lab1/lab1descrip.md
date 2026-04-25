@@ -1,8 +1,8 @@
 ## CHW1.1. Write a function that modifies a list
 
-    Given a list of integer numbers stored in the variable `A` and an integer `n`, the function `A_subset` returns a tuple `(sum, Asub)` where sum is an integer with the sum of all the entries of the list, and `Asub` is a list including the first `n` entries of `A`.
+Given a list of integer numbers stored in the variable `A` and an integer `n`, the function `A_subset` returns a tuple `(sum, Asub)` where sum is an integer with the sum of all the entries of the list, and `Asub` is a list including the first `n` entries of `A`.
 
-    Here is an example of the function usage:
+Here is an example of the function usage:
 
 
 ``` python
