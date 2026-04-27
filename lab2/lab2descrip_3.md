@@ -6,8 +6,8 @@ Use the knowledge that you obtained in the previous question to write a function
 
 ```python
 def investment(p1, p2, p3, assets, t):
-    """Return the total investment value at time t."""
-    return p1[t] * assets[0] + p2[t] * assets[1] + p3[t] * assets[2]
+    # write your code here
+    return value
 ```
 
 Your code snippet needs to define the function `investment` that will take as arguments three 1d numpy arrays `p1`, `p2` and `p3` with same size, a tuple `assets` and an integer `t`. 
