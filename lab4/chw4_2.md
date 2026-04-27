@@ -40,6 +40,7 @@ Your code snippet should define the following variables:
 
 **Note:** The use of `np.linalg.solve()` is not permitted in this equation, as you may not have access to it on the exam. How else can you solve a system of equations?
 
+**Solution**
 ```python
 import numpy as np
 ```
