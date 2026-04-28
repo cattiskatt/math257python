@@ -40,7 +40,31 @@ Your code snippet should define the following variables:
 
 **Note:** The use of `np.linalg.solve()` is not permitted in this equation, as you may not have access to it on the exam. How else can you solve a system of equations?
 
-**Solution**
+### Solution
 ```python
 import numpy as np
+import numpy as np
+
+# 1. Define Matrix A based on the equations derived above; five rows for each of T represented in the diagram
+A = np.array([
+    [ 4, -1,  0,  0,  0],
+    [-1,  4, -1, -1,  0],
+    [ 0, -1,  4,  0, -1],
+    [ 0, -1,  0,  4, -1],
+    [ 0,  0, -1, -1,  4]
+])
+
+# 2. Define Vector b using the provided boundary values in S
+# S[0] to S[8] map to S_0 to S_8, for example, at T0, it is surrounded by the points S0, S1, and S8
+b = np.array([
+    S[0] + S[1] + S[8],
+    S[2],
+    S[7] + S[8],
+    S[3] + S[4],
+    S[5] + S[6]
+])
+
+# 3. Solve for T using the matrix inverse
+# T = A^-1 * b. Imagine solving for the equation A*T = b. So solve for T, we must multiply both sides with the inverse of A^-1
+T = np.linalg.inv(A) @ b
 ```

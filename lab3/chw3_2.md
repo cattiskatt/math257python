@@ -6,7 +6,7 @@ Use this information to restore the original image. In the editor box below, wri
 
 Hint: You can use `np.linalg.inv` to compute the inverse of a matrix. 
 
-```md
+
 The setup code gives the following variables:
 
 | Name          | Type        | Description                    |
@@ -19,7 +19,7 @@ Your code snippet should define the following variables:
 | Name        | Type        | Description      |
 |------------:|:-----------:|:-----------------|
 | `corrected` | numpy array | Corrected image  |
-```
+
 
 ### Solution 
 
