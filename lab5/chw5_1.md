@@ -27,6 +27,9 @@ The matrix `nonstop_flights` represents a network of 100 U.S. airports as descri
 ```python
 import numpy as np
 
-atmost_1_layover = nonstop_flights  + (nonstop_flights @ nonstop_flights)
-num_options = atmost_1_layover[26,7]
+atmost_1_layover = nonstop_flights  + (nonstop_flights @ nonstop_flights) # A = M+ M^2 The fundamental theorem of graph theory in linear algebra states that If M is the adjacency matrix of a grpah, then the entry at (i,j) in the matrix M^k represents the number of walks of length exactly k from node j to i. since we want a length of 2, we would have M^2. M represents walks of length 1, representing nonstop_flights 
+# m^2 represents walk of length 2, representing 1-layover flight
+# resulting matrix tells you the number of ways to get from any import either using a direct flight or single connection
+num_options = atmost_1_layover[26,7] 
+# this helps us find the 27th colum and the 8th row. remember that indicies are one less since it starts at 0
 ```
