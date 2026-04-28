@@ -33,17 +33,35 @@ You are given a number `N` of branches in the circuit, and two corresponding arr
 * `E`: which contains the $N$ electromotive forces $\mathcal{E}_0, \mathcal{E}_1, \dots, \mathcal{E}_{N-1}$.
 * `R`: which contains the $N$ resistances $R_0, R_1, \dots, R_{N-1}$.
 
-### **Setup Variables**
+The setup code gives the following variables:
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `N` | int | number of branches |
 | `R` | numpy array | array of N resistances |
 | `E` | numpy array | array of N EMFs |
 
-### **Required Variables**
+Your code snippet should define the following variables:
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `A` | numpy array | matrix of coefficients for the linear system |
 | `I` | numpy array | vector of currents and voltage |
 
 > **Note:** The use of `np.linalg.solve()` or `np.linalg.inv()` is not permitted in this question.
+
+**Solution**
+``` python
+import numpy as np
+import scipy.linalg as sla
+E = np.append(E,0) # appends a 0 in to the E matrix as shown above
+
+A = np.zeros((N+1,N+1)) # creates an empty matrix n+1 equation, given the n+1 equations obtained through ohm's law and kirchoff's law
+
+A[:N,:N] = np.diag(R) # diagonals of A are filled with resistances R
+
+A[:N,N] =1 # upper triangle filled with 1s
+A[N,:N] =1 #lower triangle filled with 1s
+
+lu, piv = sla.lu_factor(A) # computes the LU decomposition of A and assigns them to the variable to lu. piv explains the shuffling during the process
+
+I = sla.lu_solve((lu,piv),E) # uses the fact that Ly = B and that Ux = y. solves for y first, then solve x, which in this case should be I
+```
